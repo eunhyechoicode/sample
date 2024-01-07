@@ -1,7 +1,7 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import OrderApi from "shared/api/OrderApi";
 import ProductApi from "shared/api/ProductApi";
-import * as MyRouter from "../../lib/MyRouter";
 import * as MyLayout from "../../lib/MyLayout";
 import Page from "../../components/Page";
 import Title from "../../components/Title";
@@ -13,12 +13,13 @@ import PaymentSuccessDialog from "./PaymentSuccessDialog";
 
 const CartPage = () => {
   const [product, setProduct] = React.useState();
-  const { productId } = MyRouter.useParams();
+  const { productId } = useParams();
   const { startLoading, finishLoading } = MyLayout.useLoading();
   const { openDialog } = MyLayout.useDialog();
 
+
   const fetch = async (productId) => {
-    startLoading("장바구니에 담는중...");
+    startLoading("Putting in a cart...");
     try {
       const product = await ProductApi.fetchProduct(productId);
       setProduct(product);
@@ -30,7 +31,7 @@ const CartPage = () => {
   };
 
   const handleSubmit = async (values) => {
-    startLoading("결재중...");
+    startLoading("Payment Processing...");
     try {
       await OrderApi.createOrder(values);
     } catch (e) {
@@ -52,7 +53,7 @@ const CartPage = () => {
   return (
     <div className="CartPage">
       <Page
-        header={<Title backUrl="/">장바구니</Title>}
+        header={<Title backUrl="/">Cart</Title>}
         footer={<PaymentButton form="order-form" />}
       >
         {product && <ProductItem product={product} />}

@@ -1,10 +1,10 @@
-import * as MyRouter from "../lib/MyRouter";
+import { Link } from "react-router-dom";
 
 const Title = ({ backUrl = "", children }) => {
   if (backUrl) {
     return (
       <>
-        <MyRouter.Link to={backUrl} />
+        <Link to={backUrl} />
         <h1 style={{ paddingRight: "44px" }}>{children}</h1>
       </>
     );

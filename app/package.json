@@ -7,7 +7,13 @@
     "start": "webpack serve --config ../shared/webpack.config.js"
   },
   "author": "EunHye Choi <eunhye@choicode.com>",
-  "contributor": [{"name":"Jeonghwan Kim","email":"ej88ej@gmail.com","url":"https://github.com/jeonghwan-kim/lecture-react-season2"}],
+  "contributor": [
+    {
+      "name": "Jeonghwan Kim",
+      "email": "ej88ej@gmail.com",
+      "url": "https://github.com/jeonghwan-kim/lecture-react-season2"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.17.10",
@@ -16,6 +22,7 @@
     "msw": "^1.2.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-router-dom": "^6.21.1",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"

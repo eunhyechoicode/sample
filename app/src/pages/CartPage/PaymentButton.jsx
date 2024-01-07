@@ -8,7 +8,7 @@ const PaymentButton = () => (
       style={{ padding: "12px 0" }}
       form={"order-form"}
     >
-      결제하기
+      Payment
     </Button>
   </div>
 );

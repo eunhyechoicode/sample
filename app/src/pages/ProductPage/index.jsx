@@ -13,7 +13,7 @@ const ProductPage = () => {
   const { openDialog } = MyLayout.useDialog();
 
   const fetch = async () => {
-    startLoading("메뉴 목록 로딩중...");
+    startLoading("Loading...");
     try {
       const productList = await ProductApi.fetchProductList();
       setProductList(productList);
@@ -30,7 +30,7 @@ const ProductPage = () => {
 
   return (
     <div className="ProductPage">
-      <Page header={<Title>메뉴목록</Title>} footer={<Navbar />}>
+      <Page header={<Title>Menu List</Title>} footer={<Navbar />}>
         <ul>
           {productList.map((product) => (
             <li key={product.id}>

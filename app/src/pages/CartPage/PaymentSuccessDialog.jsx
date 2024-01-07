@@ -1,10 +1,10 @@
-import * as MyRouter from "../../lib/MyRouter";
+import { useNavigate } from "react-router-dom";
 import * as MyLayout from "../../lib/MyLayout";
 import Dialog from "../../components/Dialog";
 import Button from "../../components/Button";
 
 const PaymentSuccessDialog = () => {
-  const navigate = MyRouter.useNavigate();
+  const navigate = useNavigate();;
   const { closeDialog } = MyLayout.useDialog();
 
   const handleClickNo = () => {
@@ -19,19 +19,19 @@ const PaymentSuccessDialog = () => {
 
   return (
     <Dialog
-      header={<>결제 완료</>}
+      header={<>Payment Success</>}
       footer={
         <>
           <Button style={{ marginRight: "8px" }} onClick={handleClickNo}>
-            아니오
+            No
           </Button>
           <Button styleType="brand" onClick={handleClickYes}>
-            네, 주문상태를 확인합니다.
+            Yes, check the order Status
           </Button>
         </>
       }
     >
-      결제가 완료되었습니다. 주문 상태를 보러 가시겠습니까?
+      Payment Success. Do you want to check the order status?
     </Dialog>
   );
 };

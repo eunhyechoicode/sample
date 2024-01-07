@@ -7,15 +7,15 @@ const ProductItem = ({ product, onClick }) => {
     <div className="ProductItem">
       <div className="description">
         <h2>{name}</h2>
-        <div>{price.toLocaleString()}원</div>
+        <div>$ {price.toLocaleString()}</div>
         {onClick && (
           <Button styleType="brand" onClick={onClick}>
-            주문하기
+            Order
           </Button>
         )}
       </div>
       <div className="thumbnail">
-        <img src={thumbnail} alt={`${name} ${price.toLocaleString()}원`} />
+        <img src={thumbnail} alt={`${name} $${price.toLocaleString()}`} />
       </div>
     </div>
   );

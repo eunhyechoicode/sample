@@ -15,7 +15,7 @@ const OrderPage = () => {
   const { openDialog } = MyLayout.useDialog();
 
   const fetch = async () => {
-    startLoading("주문 정보 로딩중...");
+    startLoading("Loading...");
     try {
       const order = await OrderApi.fetchMyOrder();
       setOrder(order);
@@ -40,7 +40,7 @@ const OrderPage = () => {
 
   return (
     <div className="OrderPage">
-      <Page header={<Title>주문내역</Title>} footer={<Navbar />}>
+      <Page header={<Title>Orders</Title>} footer={<Navbar />}>
         {order && (
           <>
             <OrderStatusCard order={order} />

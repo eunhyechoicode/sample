@@ -26,7 +26,7 @@ export const handlers = [
   rest.get("/api/order/my", (req, res, ctx) => {
     const order = database.findOrder();
     const index = Date.now() % 2;
-    order.status = ["음식 준비중", "배달중"][index];
+    order.status = ["Ready for food", "On delivery"][index];
     order.position = [
       [30, 30],
       [60, 60],

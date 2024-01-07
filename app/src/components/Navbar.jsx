@@ -1,16 +1,16 @@
-import * as MyRouter from "../lib/MyRouter";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const match = MyRouter.useMatch();
+  const { pathname } = useLocation()
 
   return (
     <nav className="Navbar">
-      <MyRouter.Link className={match("/") ? "active" : ""} to="/">
-        메뉴목록
-      </MyRouter.Link>
-      <MyRouter.Link className={match("/order") ? "active" : ""} to="/order">
-        주문내역
-      </MyRouter.Link>
+      <Link className={pathname === '/' ? "active" : ""} to="/" >
+        MenuList
+      </Link>
+      <Link className={pathname === '/order' ? "active" : ""} to="/order">
+        OrderList
+      </Link>
     </nav>
   );
 };

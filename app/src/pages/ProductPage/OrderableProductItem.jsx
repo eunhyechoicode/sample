@@ -1,8 +1,8 @@
-import * as MyRouter from "../../lib/MyRouter";
+import { useNavigate } from "react-router-dom";
 import ProductItem from "../../components/ProductItem";
 
 const OrderableProductItem = ({ product }) => {
-  const navigate = MyRouter.useNavigate();
+  const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/cart?productId=${product.id}`);
   };

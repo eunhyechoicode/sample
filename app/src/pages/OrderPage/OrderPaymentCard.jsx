@@ -13,23 +13,23 @@ const OrderPaymentCard = ({ order }) => {
     <Card
       header={
         <>
-          총 결제금액: {totalPrice.toLocaleString()}원
+          Total: USD {totalPrice.toLocaleString()}
           <br />
-          결제 방법: {paymentMethod}
+          Payment Method: {paymentMethod}
         </>
       }
       data={[
         {
-          term: "메뉴가격",
-          description: <>{productPrice.toLocaleString()}원</>,
+          term: "Price",
+          description: <>USD {productPrice.toLocaleString()}</>,
         },
         {
-          term: "배달료",
-          description: <>{deliveryPrice.toLocaleString()}원</>,
+          term: "Delivery Price",
+          description: <>USD {deliveryPrice.toLocaleString()}</>,
         },
         {
-          term: "할인금액",
-          description: <>{discountPrice.toLocaleString()}원</>,
+          term: "Discount",
+          description: <>USD {discountPrice.toLocaleString()}</>,
         },
       ]}
     />

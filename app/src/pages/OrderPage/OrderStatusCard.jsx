@@ -11,11 +11,11 @@ const OrderStatusCard = ({ order }) => {
   const calculateDeliveryMinute = () => {
     console.log("calculateDeliveryMinute");
 
-    const 오랜시간 = 99999;
-    for (let i = 0; i < 오랜시간; i++) {}
+    const MaxTime = 99999;
+    for (let i = 0; i < MaxTime; i++) {}
 
     if (!position[0]) return "-";
-    return `${position[0]}분`;
+    return `${position[0]} Minute`;
   };
 
   const expectedDeliveryMinutes = React.useMemo(calculateDeliveryMinute, [
@@ -26,8 +26,8 @@ const OrderStatusCard = ({ order }) => {
     openDialog(
       <Dialog footer={<Button onClick={closeDialog}>확인</Button>}>
         <ul>
-          <li>위도: {position[0]}</li>
-          <li>경도: {position[1]}</li>
+          <li>Latitude: {position[0]}</li>
+          <li>Longitude: {position[1]}</li>
         </ul>
       </Dialog>
     );
@@ -43,10 +43,10 @@ const OrderStatusCard = ({ order }) => {
         </>
       }
       data={[
-        { term: "주문일시", description: orderDate },
-        { term: "주문번호", description: id },
+        { term: "Order Date", description: orderDate },
+        { term: "Order Id", description: id },
         {
-          term: "도착 예상 시간",
+          term: "Expected Delivery Minutes",
           description: (
             <ExpectedDeliveryMinutes
               value={expectedDeliveryMinutes}
@@ -57,8 +57,8 @@ const OrderStatusCard = ({ order }) => {
       ]}
       footer={
         <>
-          <Button>전화</Button>
-          <Button>가게보기</Button>
+          <Button>Phone</Button>
+          <Button>View</Button>
         </>
       }
     />
@@ -73,7 +73,7 @@ const ExpectedDeliveryMinutes = React.memo(({ value, onClick }) => {
   return (
     <>
       {value}
-      <Button onClick={onClick}>위치보기</Button>
+      <Button onClick={onClick}>View the location</Button>
     </>
   );
 });
