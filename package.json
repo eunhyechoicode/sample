@@ -1,14 +1,14 @@
 {
-  "name": "lecture-react-season2",
+  "name": "sample",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "1-react": "npm start --workspace 1-react",
-    "2-hook": "npm start --workspace 2-hook"
+    "dev": "npm start --workspace app"
   },
   "keywords": [],
-  "author": "Jeonghwan Kim <ej88ej@gmail.com>",
+  "author": "EunHye Choi <eunhye@choicode.com>",
+  "contributor": [{"name":"Jeonghwan Kim","email":"ej88ej@gmail.com","url":"https://github.com/jeonghwan-kim/lecture-react-season2"}],
   "license": "ISC",
   "engines": {
     "node": ">=16.20.0",
@@ -16,8 +16,7 @@
   },
   "engineStrict": true,
   "workspaces": [
-    "1-react",
-    "2-hook",
+    "app",
     "shared"
   ],
   "msw": {

@@ -1,12 +1,13 @@
 {
-  "name": "1-react",
+  "name": "app",
   "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
   "scripts": {
     "start": "webpack serve --config ../shared/webpack.config.js"
   },
-  "author": "Jeonghwan Kim <ej88ej@gmail.com>",
+  "author": "EunHye Choi <eunhye@choicode.com>",
+  "contributor": [{"name":"Jeonghwan Kim","email":"ej88ej@gmail.com","url":"https://github.com/jeonghwan-kim/lecture-react-season2"}],
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.17.10",
