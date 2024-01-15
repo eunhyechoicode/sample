@@ -1,18 +1,24 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { BottomNavigation, BottomNavigationAction } from "@mui/material";
 
 const Navbar = () => {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
+
+  const handleChange = (event, newValue) => {
+    navigate(newValue);
+  };
 
   return (
-    <nav className="Navbar">
-      <Link className={pathname === '/' ? "active" : ""} to="/" >
-        MenuList
-      </Link>
-      <Link className={pathname === '/order' ? "active" : ""} to="/order">
-        OrderList
-      </Link>
-    </nav>
-  );
+    <BottomNavigation
+      showLabels
+      value={pathname}
+      onChange={handleChange}
+    >
+      <BottomNavigationAction label="MenuList" value="/"/>
+      <BottomNavigationAction label="OrderList" value="/order"/>
+    </BottomNavigation>
+  )
 };
 
 export default Navbar;
